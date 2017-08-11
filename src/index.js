@@ -3,6 +3,7 @@ import ignoreElements from './ignoreElements';
 import mapError from './mapError';
 import switchMap from './switchMap';
 import tapError from './tapError';
+import toArray from './toArray';
 
 export {
   fromEagerPromise,
@@ -10,6 +11,7 @@ export {
   mapError,
   switchMap,
   tapError,
+  toArray,
 };
 
 export default {
@@ -18,4 +20,5 @@ export default {
   mapError,
   switchMap,
   tapError,
+  toArray,
 };

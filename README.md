@@ -30,3 +30,23 @@ The problem with `fromPromise` is that promises are eager, and therefore it woul
 `tapError(f(x: any): void, stream: Stream): Stream`
 
 The same as `most.tap` excepts it allows for tapping of items in the error state.
+
+### toArray
+`toArray(stream: Stream): Stream`
+
+Accumlates all of the items emitted and emits an array of all of those items.
+
+None of the original items are emitted on this new stream.
+
+*Example:*
+```js
+const stream = most
+  .from([1, 2, 3])
+  .thru(mA.toArray);
+
+stream.observe({
+  next: console.log,  
+});
+
+// -> [1, 2, 3]
+```
