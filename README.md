@@ -25,3 +25,8 @@ This is useful in situations whereby you have an underlying internal error that 
 `fromEagerPromise(f(): Promise): Stream`
 
 The problem with `fromPromise` is that promises are eager, and therefore it would have already executed prior to being subscribed to. This function creates a lazy stream version of the promise.
+
+### tapError
+`tapError(f(x: any): void, stream: Stream): Stream`
+
+The same as `most.tap` excepts it allows for tapping of items in the error state.
