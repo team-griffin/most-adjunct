@@ -1,7 +1,5 @@
 import r from 'ramda';
-import * as most from 'most';
-
-const mfilterc = r.curry(most.filter);
+import { mfilterc } from './_curried';
 
 const ignoreElements = (stream$) => r.pipe(
   mfilterc(r.F),
