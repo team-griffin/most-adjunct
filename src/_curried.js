@@ -3,5 +3,5 @@ import { curryN } from 'ramda';
 
 export const curry2 = r.curryN(2);
 
-export const mfilterc = r.curry2(most.filter);
-export const mmapc = r.curry2(most.map);
+export const mfilterc = curry2(most.filter);
+export const mmapc = curry2(most.map);
