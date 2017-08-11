@@ -4,6 +4,16 @@
 
 **Note:** All functions in `most-adjunct` are curried.
 
+* [fromEagerPromise](#fromeagerpromise)
+* [ignoreElements](#ignoreelements)
+* [last](#last)
+* [mapError](#maperror)
+* [range](#range)
+* [switchMap](#switchmap)
+* [tapError](#taperror)
+* [toArray](#toarray)
+
+
 ### fromEagerPromise
 `fromEagerPromise(f(): Promise): Stream`
 
