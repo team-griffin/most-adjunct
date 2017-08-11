@@ -43,6 +43,24 @@ If the stream errors this function will allow you to transform the error (via ma
 
 This is useful in situations whereby you have an underlying internal error that you want to make into a human readable error.
 
+### range
+`range(start: Number, end: Number): Stream`
+
+Create a stream of numbers from start to end.
+
+*Example:*
+```js
+const stream = mA.range(1, 3);
+
+stream.observe({
+  next: console.log,  
+});
+
+// -> 1
+// -> 2
+// -> 3
+```
+
 ### switchMap
 `switchMap(f: (x: any): Stream, stream: Stream): Stream`
 
