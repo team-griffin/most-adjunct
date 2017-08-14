@@ -6,6 +6,7 @@ import range from './range';
 import switchMap from './switchMap';
 import tapError from './tapError';
 import toArray from './toArray';
+import concatArray from './concatArray';
 
 export {
   fromEagerPromise,
@@ -16,6 +17,7 @@ export {
   switchMap,
   tapError,
   toArray,
+  concatArray,
 };
 
 export default {
@@ -27,4 +29,5 @@ export default {
   switchMap,
   tapError,
   toArray,
+  concatArray,
 };
