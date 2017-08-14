@@ -1,8 +1,8 @@
 import * as most from 'most';
 import { curryN } from 'ramda';
 
-export const curry2 = r.curryN(2);
-export const curry3 = r.curryN(3);
+export const curry2 = curryN(2);
+export const curry3 = curryN(3);
 
 export const mfilterc = curry2(most.filter);
 export const mmapc = curry2(most.map);
