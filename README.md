@@ -4,6 +4,7 @@
 
 **Note:** All functions in `most-adjunct` are curried.
 
+* [concatArray](#concatArray)
 * [fromEagerPromise](#fromeagerpromise)
 * [ignoreElements](#ignoreelements)
 * [last](#last)
@@ -13,6 +14,10 @@
 * [tapError](#taperror)
 * [toArray](#toarray)
 
+### concatArray
+`concatArray(arr: Array<Stream>): Stream`
+
+Array variant of `most.concat`, allowing you to concatenate many streams together. 
 
 ### fromEagerPromise
 `fromEagerPromise(f(): Promise): Stream`
