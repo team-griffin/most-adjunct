@@ -1,3 +1,4 @@
+import concatArray from './concatArray';
 import fromEagerPromise from './fromEagerPromise';
 import ignoreElements from './ignoreElements';
 import last from './last';
@@ -6,9 +7,9 @@ import range from './range';
 import switchMap from './switchMap';
 import tapError from './tapError';
 import toArray from './toArray';
-import concatArray from './concatArray';
 
 export {
+  concatArray,
   fromEagerPromise,
   ignoreElements,
   last,
@@ -17,10 +18,10 @@ export {
   switchMap,
   tapError,
   toArray,
-  concatArray,
 };
 
 export default {
+  concatArray,
   fromEagerPromise,
   ignoreElements,
   last,
@@ -29,5 +30,4 @@ export default {
   switchMap,
   tapError,
   toArray,
-  concatArray,
 };
