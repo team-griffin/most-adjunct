@@ -17,7 +17,7 @@
 ### concatArray
 `concatArray(arr: Array<Stream>): Stream`
 
-Array variant of `most.concat`, allowing you to concatenate many streams together. 
+Array variant of `most.concat`, allowing you to concatenate many streams together.
 
 ### fromEagerPromise
 `fromEagerPromise(f(): Promise): Stream`
@@ -104,4 +104,15 @@ stream.observe({
 });
 
 // -> [1, 2, 3]
+```
+
+### waitUntil
+`waitUntil(f: (): boolean | Promise<boolean>, interval: number = 500): Stream`
+
+Creates a Stream that will only start emitting events when the predecate function returns true.
+
+*Example:*
+```js
+waitUntil(() => returnTrueOrFalse(), 1000)
+  .map(() => {});
 ```
