@@ -7,6 +7,7 @@ import range from './range';
 import switchMap from './switchMap';
 import tapError from './tapError';
 import toArray from './toArray';
+import waitUntil from './waitUntil';
 
 export {
   concatArray,
@@ -18,6 +19,7 @@ export {
   switchMap,
   tapError,
   toArray,
+  waitUntil,
 };
 
 export default {
@@ -30,4 +32,5 @@ export default {
   switchMap,
   tapError,
   toArray,
+  waitUntil,
 };
