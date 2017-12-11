@@ -26,7 +26,7 @@ Array variant of `most.concat`, allowing you to concatenate many streams togethe
 The problem with `fromPromise` is that promises are eager, and therefore it would have already executed prior to being subscribed to. This function creates a lazy stream version of the promise.
 
 ### fromFuture
-`fromFutre(future: Future): Stream`
+`fromFuture(future: Future): Stream`
 
 Converts a future into a stream.
 
