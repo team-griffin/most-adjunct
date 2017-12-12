@@ -1,6 +1,6 @@
 {
   "name": "most-adjunct",
-  "version": "0.8.1",
+  "version": "0.9.1",
   "main": "lib/index.js",
   "jsnext:main": "lib/index.js",
   "repository": "git@github.com:team-griffin/most-adjunct.git",
@@ -20,18 +20,19 @@
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.1.21",
-    "babel-eslint": "^7.2.1",
-    "babel-loader": "^6.1.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
     "babel-plugin-istanbul": "^4.1.4",
+    "babel-plugin-ramda": "^1.4.3",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^4.0.2",
     "cross-env": "^5.0.1",
     "dockerscript": "^0.0.6",
-    "eslint": "^3.19.0",
+    "eslint": "^4.13.0",
     "eslint-plugin-flowtype": "^2.30.4",
-    "mocha": "^3.4.2",
+    "mocha": "^4.0.1",
     "nyc": "^11.0.2"
   },
   "nyc": {
@@ -48,6 +49,6 @@
   "dependencies": {
     "@most/create": "^2.0.1",
     "most": "^1.5.1",
-    "ramda": "^0.24.1"
+    "ramda": "^0.25.0"
   }
 }
