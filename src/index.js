@@ -1,6 +1,6 @@
 import concatArray from './concatArray';
 import fromEagerPromise from './fromEagerPromise';
-import fromFutrue from './fromFuture';
+import fromFuture from './fromFuture';
 import ignoreElements from './ignoreElements';
 import last from './last';
 import mapError from './mapError';
