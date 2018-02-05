@@ -1,6 +1,6 @@
 {
   "name": "most-adjunct",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "main": "lib/index.js",
   "jsnext:main": "lib/index.js",
   "repository": "git@github.com:team-griffin/most-adjunct.git",
