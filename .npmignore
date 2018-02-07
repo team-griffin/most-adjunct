@@ -3,4 +3,4 @@
 .*
 
 # And then whitelist
-!lib/**
+!dist/**
