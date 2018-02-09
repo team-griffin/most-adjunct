@@ -1,8 +1,8 @@
 {
   "name": "most-adjunct",
-  "version": "0.12.0",
-  "main": "dist/cjs/css-longhand.js",
-  "module": "dist/es/css-longhand.js",
+  "version": "0.12.1",
+  "main": "dist/cjs/most-adjunct.js",
+  "module": "dist/es/most-adjunct.js",
   "repository": "git@github.com:team-griffin/most-adjunct.git",
   "author": "Joshua Thornton <joshua.thornton@heg.com>",
   "license": "MIT",
