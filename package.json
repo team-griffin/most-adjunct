@@ -1,6 +1,6 @@
 {
   "name": "most-adjunct",
-  "version": "0.12.2",
+  "version": "0.12.3",
   "main": "dist/cjs/most-adjunct.js",
   "module": "dist/es/most-adjunct.js",
   "repository": "git@github.com:team-griffin/most-adjunct.git",
@@ -36,7 +36,7 @@
     "eslint-plugin-flowtype": "^2.30.4",
     "mocha": "^4.0.1",
     "nyc": "^11.0.2",
-    "rollup": "^0.55.3",
+    "rollup": "^0.54.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-memory": "^3.0.0",
