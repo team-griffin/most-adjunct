@@ -1,5 +1,5 @@
 import * as most from 'most';
-import { curryN } from 'ramda';
+import curryN from 'ramda/src/curryN';
 
 export const curry2 = curryN(2);
 export const curry3 = curryN(3);

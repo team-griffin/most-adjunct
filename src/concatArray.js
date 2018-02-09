@@ -1,4 +1,4 @@
-import { reduce } from 'ramda';
+import reduce from 'ramda/src/reduce';
 import { concat } from 'most';
 
 const concatArray = reduce((main$, child$) => {

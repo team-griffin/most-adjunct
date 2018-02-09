@@ -1,8 +1,8 @@
-import r from 'ramda';
+import pipe from 'ramda/src/pipe';
 import * as most from 'most';
 import { curry2, mmapc } from './_curried';
 
-const switchMap = curry2((f, stream$) => r.pipe(
+const switchMap = curry2((f, stream$) => pipe(
   mmapc(f),
   most.switchLatest,
 )(stream$));

@@ -1,5 +1,5 @@
 import { mreducec } from './_curried';
-import { nthArg } from 'ramda';
+import nthArg from 'ramda/src/nthArg';
 import fromEagerPromise from './fromEagerPromise';
 
 const valueArg = nthArg(1);

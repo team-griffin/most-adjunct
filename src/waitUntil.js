@@ -1,5 +1,5 @@
 import { unfold } from 'most';
-import { equals } from 'ramda';
+import equals from 'ramda/src/equals';
 
 const waitUntil = (f, interval = 500) => {
   return unfold((done) => {

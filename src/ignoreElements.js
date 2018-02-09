@@ -1,8 +1,9 @@
-import r from 'ramda';
+import pipe from 'ramda/src/pipe';
+import F from 'ramda/src/F';
 import { mfilterc } from './_curried';
 
-const ignoreElements = (stream$) => r.pipe(
-  mfilterc(r.F),
+const ignoreElements = (stream$) => pipe(
+  mfilterc(F),
 )(stream$);
 
 export default ignoreElements;
