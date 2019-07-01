@@ -1,5 +1,5 @@
 import { recoverWith, throwError } from 'most';
-import { curry2 } from './_curried';
+import { curry2 } from '@team-griffin/capra';
 
 const tapError = curry2((f, stream) => recoverWith(
   (err) => {

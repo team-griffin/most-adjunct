@@ -1,9 +1,10 @@
-import pipe from 'ramda/src/pipe';
+import { pipe } from 'ramda';
 import * as most from 'most';
-import { curry2, mmapc } from './_curried';
+import { map } from 'mostc';
+import { curry2 } from '@team-griffin/capra';
 
 const switchMap = curry2((f, stream$) => pipe(
-  mmapc(f),
+  map(f),
   most.switchLatest,
 )(stream$));
 

@@ -1,12 +1,12 @@
-import { mreducec } from './_curried';
-import nthArg from 'ramda/src/nthArg';
+import { reduce } from 'mostc';
+import { nthArg } from 'ramda';
 import fromEagerPromise from './fromEagerPromise';
 
 const valueArg = nthArg(1);
 
 const last = (stream$) => {
   return fromEagerPromise(() => {
-    return mreducec(valueArg, void 0, stream$);
+    return reduce(valueArg, void 0, stream$);
   });
 };
 

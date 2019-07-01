@@ -1,5 +1,7 @@
-import pipe from 'ramda/src/pipe';
-import rRange from 'ramda/src/range';
+import {
+  pipe,
+  range as rRange,
+} from 'ramda';
 import { from as fromArray } from 'most';
 
 const range = pipe(
