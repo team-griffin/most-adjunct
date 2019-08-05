@@ -1,6 +1,6 @@
 {
   "name": "most-adjunct",
-  "version": "0.12.4",
+  "version": "1.0.0",
   "main": "dist/cjs/most-adjunct.js",
   "module": "dist/es/most-adjunct.js",
   "repository": "git@github.com:team-griffin/most-adjunct.git",
