@@ -1,7 +1,11 @@
 import { unfold } from 'most';
 import { equals } from 'ramda';
 
-const waitUntil = (f, interval = 500) => {
+const waitUntil = (
+  f: () => boolean | Promise<boolean>,
+  interval = 500,
+) => {
+  // @ts-ignore
   return unfold((done) => {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -17,7 +21,7 @@ const waitUntil = (f, interval = 500) => {
       }, interval);
     });
   }, false)
-  .filter(equals(true));
+    .filter(equals(true));
 };
 
 export default waitUntil;

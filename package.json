@@ -7,49 +7,66 @@
   "author": "Joshua Thornton <joshua.thornton@heg.com>",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "lint": "npm run lint:js",
-    "lint:js": "eslint -c ./config/.eslintrc.js 'src/**/*.js'",
-    "lint:js:fix": "eslint --fix -c ./config/.eslintrc.js 'src/**/*.js'",
-    "flow": "flow check; test $? -eq 0 -o $? -eq 2",
-    "build": "rollup --config ./rollup/config.js",
-    "test": "cross-env NODE_ENV=test nyc mocha",
-    "postmerge": "yarn"
+    "prepublishOnly": "cross-env NODE_ENV=production yarn build",
+    "lint": "yarn lint:js && yarn lint:ts",
+    "lint:js": "eslint -c ./.eslintrc.js 'src/**/*.ts'",
+    "lint:ts": "tsc",
+    "build": "rollup --config ./rollup.config.js",
+    "test": "cross-env NODE_ENV=test TS_NODE_FILES=true mocha --require \"@babel/register\" --require \"./test-setup.js\" \"src/**/*.test.{js,ts}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --edit"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,ts,tsx}": [
+        "eslint -c ./.eslintrc.js",
+        "git add"
+      ]
+    }
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.1.21",
-    "babel-eslint": "^8.0.3",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@team-griffin/eslint-config": "^3.2.0",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/ramda": "^0.25.0",
+    "@types/sinon": "^7.0.13",
+    "browser-env": "^3.2.6",
     "chai": "^4.0.2",
     "cross-env": "^5.0.1",
     "eslint": "^4.13.0",
-    "eslint-plugin-flowtype": "^2.30.4",
+    "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^3.0.2",
+    "lint-staged": "^8.0.0",
     "mocha": "^4.0.1",
-    "nyc": "^11.0.2",
-    "rollup": "^0.54.0",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-local-resolve": "^1.0.7"
-  },
-  "nyc": {
-    "require": [
-      "babel-register",
-      "babel-polyfill"
-    ],
-    "sourceMap": false,
-    "instrument": false,
-    "include": [
-      "src/**/*.js"
-    ]
+    "most": "^1.5.1",
+    "rollup": "^1.0.0",
+    "rollup-plugin-babel": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "semantic-release": "^15.13.19",
+    "sinon": "^7.3.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "typescript-eslint-parser": "^22.0.0"
   },
   "dependencies": {
     "@most/create": "^2.0.1",
     "@team-griffin/capra": "^0.4.1",
-    "most": "^1.5.1",
     "mostc": "^1.0.2",
     "ramda": "^0.x.x"
+  },
+  "peerDependencies": {
+    "most": "^1.5.1"
   }
 }

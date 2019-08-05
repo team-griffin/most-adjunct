@@ -1,12 +1,13 @@
+import { Stream } from 'most';
 import { reduce } from 'mostc';
 import { nthArg } from 'ramda';
 import fromEagerPromise from './fromEagerPromise';
 
 const valueArg = nthArg(1);
 
-const last = (stream$) => {
-  return fromEagerPromise(() => {
-    return reduce(valueArg, void 0, stream$);
+const last = <T>(stream$: Stream<T>) => {
+  return fromEagerPromise<T>(() => {
+    return reduce(valueArg, void 0, stream$) as any;
   });
 };
 

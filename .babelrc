@@ -1,21 +1,57 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [
-            "last 2 versions",
-            "safari >= 7"
-          ],
-        },
-        "modules": false,
-        "useBuiltIns": false,
-      }
-    ]
+  "plugins": [
+    ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": true }],
   ],
 
-  "plugins": [
-    ["transform-object-rest-spread", { "useBuiltIns": true }],
-  ]
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "safari >= 7"
+              ],
+            },
+            "modules": false,
+            "useBuiltIns": false,
+          }
+        ]
+      ]
+    },
+
+    "production": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "safari >= 7"
+              ],
+            },
+            "modules": false,
+            "useBuiltIns": false,
+          }
+        ]
+      ],
+    },
+
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",{
+            "targets": {
+              "node": "current",
+            },
+            "modules": "commonjs",
+            "useBuiltIns": false,
+          },
+        ],
+      ],
+    }
+  }
 }

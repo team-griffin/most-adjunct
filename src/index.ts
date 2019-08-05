@@ -23,17 +23,3 @@ export {
   toArray,
   waitUntil,
 };
-
-export default {
-  concatArray,
-  fromEagerPromise,
-  fromFuture,
-  ignoreElements,
-  last,
-  mapError,
-  range,
-  switchMap,
-  tapError,
-  toArray,
-  waitUntil,
-};

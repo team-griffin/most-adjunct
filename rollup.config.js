@@ -1,8 +1,10 @@
 import babel from 'rollup-plugin-babel';
-import localResolve from 'rollup-plugin-local-resolve';
+import localResolve from 'rollup-plugin-node-resolve';
+import typescript from 'rollup-plugin-typescript2';
+import path from 'path';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: [
     {
       file: 'dist/es/most-adjunct.js',
@@ -15,9 +17,17 @@ export default {
   ],
   plugins: [
     localResolve(),
+    typescript({
+      tsconfig: path.resolve('./tsconfig.json'),
+      tsconfigOverride: {
+        compilerOptions: {
+          module: 'ES2015',
+        },
+      },
+    }),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
+      extensions: [ '.js', '.ts' ],
     }),
   ],
   external: [

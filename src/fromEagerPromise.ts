@@ -1,10 +1,10 @@
 import { create } from '@most/create';
 
-const fromEagerPromise = (f) => {
-  return create((add, end, error) => {
+const fromEagerPromise = <T>(f: () => Promise<T>) => {
+  return create<T>((add, end, error) => {
     const rawPromise = f();
 
-    return rawPromise.then((data) => {
+    rawPromise.then((data) => {
       add(data);
       end();
     }, error);
