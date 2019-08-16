@@ -1,8 +1,9 @@
 {
   "name": "most-adjunct",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/cjs/most-adjunct.js",
   "module": "dist/es/most-adjunct.js",
+  "types": "dist/es/index.d.ts",
   "repository": "git@github.com:team-griffin/most-adjunct.git",
   "author": "Joshua Thornton <joshua.thornton@heg.com>",
   "license": "MIT",
