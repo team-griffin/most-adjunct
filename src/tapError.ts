@@ -1,15 +1,19 @@
-import { recoverWith, throwError, Stream } from 'most';
-import { curry2 } from '@team-griffin/capra';
+import { throwError, Stream } from 'most';
 
-const tapError = <T>(
-  f: (t: T) => any,
-  stream: Stream<T>,
-) => recoverWith<any, T>(
-  (err) => {
+interface TapError {
+  <T>(f: (t: any) => any, s: Stream<T>): Stream<T>
+  (f: (t: any) => any): <T>(s: Stream<T>) => Stream<T>
+}
+
+// @ts-ignore
+const tapError: TapError = <T>(f: (t: T) => any, stream$: Stream<T>) => {
+  if (stream$ == null) {
+    return (stream$: Stream<T>) => tapError(f, stream$);
+  }
+  return stream$.recoverWith((err: any) => {
     f(err);
-    return throwError(err as any as Error);
-  },
-  stream,
-);
+    return throwError(err);
+  });
+};
 
-export default curry2(tapError);
+export default tapError;

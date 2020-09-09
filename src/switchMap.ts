@@ -1,14 +1,16 @@
-import { pipe } from 'ramda';
-import * as most from 'most';
-import { map } from 'mostc';
-import { curry2 } from '@team-griffin/capra';
+import { Stream } from 'most';
 
-const switchMap = <T, R>(
-  f: (t: T) => most.Stream<R>,
-  stream$: most.Stream<T>,
-) => pipe(
-    map(f),
-    most.switchLatest,
-  )(stream$);
+interface SwitchMap {
+  <T, R>(f: (t: T) => Stream<R>, s: Stream<T>): Stream<R>
+  <T, R>(f: (t: T) => Stream<R>): (s: Stream<T>) => Stream<R>
+}
 
-export default curry2(switchMap);
+// @ts-ignore
+const switchMap: SwitchMap = <T, R>(f: (t: T) => Stream<R>, stream$?: Stream<T>) => {
+  if (stream$ == null) {
+    return (stream$: Stream<T>) => switchMap(f, stream$);
+  }
+  return stream$.map(f).switchLatest();
+};
+
+export default switchMap;

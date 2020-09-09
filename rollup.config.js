@@ -31,10 +31,7 @@ export default {
     }),
   ],
   external: [
-    'ramda',
     'most',
     '@most/create',
-    'mostc',
-    '@team-griffin/capra',
   ],
 };

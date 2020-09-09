@@ -1,5 +1,4 @@
 import { unfold } from 'most';
-import { equals } from 'ramda';
 
 const waitUntil = (
   f: () => boolean | Promise<boolean>,
@@ -21,7 +20,7 @@ const waitUntil = (
       }, interval);
     });
   }, false)
-    .filter(equals(true));
+    .filter((x) => x === true);
 };
 
 export default waitUntil;
